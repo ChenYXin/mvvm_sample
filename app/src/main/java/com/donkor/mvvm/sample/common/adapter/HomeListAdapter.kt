@@ -41,6 +41,14 @@ class HomeListAdapter : RecyclerView.Adapter<HomeListAdapter.HomeListViewHolder>
     }
 
     override fun onBindViewHolder(holder: HomeListViewHolder, position: Int) {
-        holder.itemBinding.item = dataList[position]
+        var item = dataList[position]
+        holder.itemBinding.item = item
+        if (item.collect == true) {
+            holder.itemBinding.itemHomeCollect.setBackgroundResource(R.drawable.img_collect)
+        } else {
+            holder.itemBinding.itemHomeCollect.setBackgroundResource(R.drawable.img_collect_grey)
+        }
+
+
     }
 }
